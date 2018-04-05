@@ -1,0 +1,12 @@
+version: '2.1'
+
+services:
+  phalcon:
+    image: phalcon
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./base:/var/www/html

@@ -1,0 +1,13 @@
+version: '2.1'
+
+services:
+  aws-cli:
+    image: aws-cli
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+    volumes:
+      - ./data:/data
