@@ -12,7 +12,7 @@ RUN amazon-linux-extras install php7.2 ruby2.4 python3 vim
 RUN yum -y install httpd httpd-tools gcc gcc-c++ make git diffutils file wget which vim re2c tar
 RUN yum -y install php php-devel 
 RUN yum -y install php-pdo php-fpm php-json php-mysqlnd php-pod php-common php-cli php-mbstring php-gd php-pear php-opcache 
-RUN yum -y install ruby ruby-devel ruby-doc rubygem-bundler libxslt-devel
+RUN yum -y install ruby ruby-devel ruby-doc rubygem-bundler libxslt-devel libpcap-devel
 RUN yum -y install python3 python3-pip python3-devel python3-tools
 RUN yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-headless java-1.8.0-openjdk-devel
 
@@ -84,5 +84,8 @@ RUN sed -i -e "s/Options Indexes FollowSymLinks/Options -Indexes +FollowSymLinks
 # httpd foreground
 ENTRYPOINT /usr/sbin/httpd -D FOREGROUND
 EXPOSE 8000
+
+# codenize-tools
+RUN gem install miam roadworker cfdef
 
 WORKDIR /data
