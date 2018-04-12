@@ -1,0 +1,16 @@
+version: '2.1'
+
+services:
+  dynamodb:
+    image: dynamodb
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+    ports:
+      - "8080:8000"
+    volumes:
+      - ./data:/data
+
