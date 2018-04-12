@@ -13,7 +13,7 @@ docker-compose up -d
 ```
 - enter TTY
 ```
-docker-compose exec tanu /bin/bash
+docker-compose exec dynamodb /bin/bash
 ```
 - test DynamoDB Local
 ```
